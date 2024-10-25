@@ -8,7 +8,8 @@ All of it
 
 ## Virtual Environment
 
-use "workon myapp" to activate virtual environment
+install virtual environment "python.exe -m venv venv"
+to activate ".\venv\Scripts\activate"
 
 ## Check what is installed in virtual env
 
