@@ -6,10 +6,13 @@ All Applications of it
 
 All of it
 
-## Virtual Environment
+## setup Virtual Environment
 
-<!-- install virtual environment "python.exe -m venv venv"
-to activate ".\venv\Scripts\activate" -->
+pip install virtualenv
+mkvirtualenv venv
+workon venv
+
+to deactivate "deactivate"
 
 ## Check what is installed in virtual env
 
