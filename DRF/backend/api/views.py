@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 import json
 from products.models import Product
+from django.forms.models import model_to_dict
 
 # Create your views here.
 
@@ -27,8 +28,11 @@ def api_home(request, *args, **kwargs):
     model_data = Product.objects.all().order_by("?").first()# this displays a random data
     data = {}
     if model_data:
-        data['id'] = model_data.id
-        data['title'] = model_data.title
-        data['content'] = model_data.content
-        data['price'] = model_data.price
+        # data['id'] = model_data.id
+        # data['title'] = model_data.title
+        # data['content'] = model_data.content
+        # data['price'] = model_data.price
+        # Also done this way
+        # data = model_to_dict(model_data)
+        data = model_to_dict(model_data, fields=['id', 'title']) # You can just add the fields you want in alone
     return JsonResponse(data)
