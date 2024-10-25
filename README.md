@@ -1,3 +1,7 @@
 # Django Rest API
 
-ALl Applications of it
+All Applications of it
+
+## Django Rest Framework too
+
+All of it
