@@ -6,19 +6,30 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from products.serializers import ProductSerializer
 
+
+
 # Create your views here.
 # @api_view(["GET", "POST"])
-@api_view(["GET"])
+# @api_view(["GET"])
+@api_view(["POST"])
 def api_home(request, *args, **kwargs):
     """DRF API view"""
     # model_data = Product.objects.all().order_by("?").first()
     instance = Product.objects.all().order_by("?").first()
     data = {}
+    
     # if model_data:
     if instance:
         # data = model_to_dict(model_data, fields=['id', 'title', 'price', 'sale_price'])
         data = ProductSerializer(instance).data
-    return Response(data)
+    # return Response(data)
+    res = Response(data)
+    # cookie = res.set_cookie(key='noble')
+    # if cookie:
+    #     print('cookie is set')
+    # else:
+    #     print('not set')
+    return res
 
 # def api_home(request, *args, **kwargs):
 #     model_data = Product.objects.all().order_by("?").first()# this displays a random data
